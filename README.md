@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/alejandroliu/pocketmine-plugins/master/Media/WorldProtect-icon.png" style="width:64px;height:64px" width="64" height="64"/>
+<img src="https://raw.githubusercontent.com/IvanCraft623/WorldProtect/stable/worldprotect.png" style="width:64px;height:64px" width="64" height="64"/>
 
 <!-- meta:Categories = Anti-Griefing -->
 <!-- meta:PluginAccess = Commands, Data Saving, World Editing -->
@@ -7,36 +7,30 @@
 # WorldProtect
 
 - Summary: protect worlds from griefers, pvp, limits and borders
-- PocketMine-MP version: 1.4 (API:1.10.0), 1.5 (API:1.12.0), 1.6+php7 (API:2.0.0)
+- PocketMine-MP version: 3.0.0 - 4.0.0
 - DependencyPlugins: 
 - OptionalPlugins: 
 - Categories: Anti-Griefing 
 - Plugin Access: Commands, Data Saving, World Editing 
-- WebSite: https://github.com/Muirfield/pocketmine-plugins/tree/master/WorldProtect
+- WebSite: https://github.com/IvanCraft623/WorldProtect
 
 <!-- end-include -->
+
+## Features of this fork
+- Bug that allow break or set (Paintings, Lava, Water) are fixed!
+- Removed the message when trying to break or place blocks.
+- Added chinese language
+- It will be upgraded to PM4 (Seeing how abandoned the poggit version is, I don't think they will)
 
 ## Overview
 
 <!-- php: $v_forum_thread = "http://forums.pocketmine.net/threads/worldprotect.7517/"; -->
 <!-- template: prologue.md -->
 
-**DO NOT POST QUESTIONS/BUG-REPORTS/REQUESTS IN THE REVIEWS**
-
-It is difficult to carry a conversation in the reviews.  If you
-have a question/bug-report/request please use the
-[Thread](http://forums.pocketmine.net/threads/worldprotect.7517/) for
-that.  You are more likely to get a response and help that way.
-
-_NOTE:_
-
-This documentation was last updated for version **2.3.0**.
-
 Please go to
-[github](https://github.com/Muirfield/pocketmine-plugins/tree/master/WorldProtect)
+[github](https://github.com/IvanCraft623/WorldProtect/tree/stable)
 for the most up-to-date documentation.
 
-You can also download this plugin from this [page](https://github.com/Muirfield/pocketmine-plugins/releases/tag/WorldProtect-2.3.0).
 
 <!-- end-include -->
 
