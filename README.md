@@ -19,7 +19,6 @@
 ## Features of this fork
 - Bug that allow break or set (Paintings, Lava, Water) are fixed!
 - Removed the message when trying to break or place blocks.
-- Added chinese language
 - It will be upgraded to PM4 (Seeing how abandoned the poggit version is, I don't think they will)
 
 ## Overview
