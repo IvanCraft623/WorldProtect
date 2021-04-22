@@ -41,9 +41,15 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 use pocketmine\Player;
 
+use pocketmine\entity\object\Painting;
+
 use pocketmine\block\Block;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
+use pocketmine\event\player\PlayerInteractEvent;
+use pocketmine\event\entity\EntityDamageEvent;
+use pocketmine\event\entity\EntityDamageByEntityEvent;
+
 use aliuly\worldprotect\common\mc;
 
 class WpProtectMgr extends BaseWp implements Listener {
@@ -135,7 +141,6 @@ class WpProtectMgr extends BaseWp implements Listener {
 		if ($ev->isCancelled()) return;
 		$pl = $ev->getPlayer();
 		if ($this->checkBlockPlaceBreak($pl)) return;
-		$this->owner->msg($pl,mc::_("You are not allowed to do that here"));
 		$ev->setCancelled();
 	}
 
@@ -143,7 +148,28 @@ class WpProtectMgr extends BaseWp implements Listener {
 		if ($ev->isCancelled()) return;
 		$pl = $ev->getPlayer();
 		if ($this->checkBlockPlaceBreak($pl)) return;
-		$this->owner->msg($pl,mc::_("You are not allowed to do that here"));
 		$ev->setCancelled();
+	}
+
+	public function onHitEntity(EntityDamageEvent $ev){
+		if (!$ev instanceof EntityDamageByEntityEvent) return;
+		if ($ev->isCancelled()) return;
+		$pl = $ev->getDamager();
+		if (!$pl instanceof Player) return;
+		if ($this->checkBlockPlaceBreak($pl)) return;
+		if ($ev->getEntity() instanceof Painting) {
+			$ev->setCancelled();
+		}
+	}
+
+	public function onSetLavaOrWater(PlayerInteractEvent $ev){
+		if ($ev->isCancelled()) return;
+		$pl = $ev->getPlayer();
+		if ($this->checkBlockPlaceBreak($pl)) return;
+		$item = $ev->getItem();
+		if ($item->getId() == 325) {
+			if ($item->getDamage() === 1) return;
+			$ev->setCancelled();
+		}
 	}
 }
